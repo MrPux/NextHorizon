@@ -17,7 +17,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-sm font-body font-medium tracking-[0.2em] uppercase text-primary mb-8"
         >
-          Empowering the next generation
+          Where ambition meets opportunity
         </motion.p>
 
         <motion.h1
@@ -26,9 +26,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.35 }}
           className="font-display text-5xl md:text-7xl font-semibold leading-[1.1] tracking-tight text-foreground mb-6"
         >
-          Your potential
+          Rise beyond
           <br />
-          <span className="text-gradient-gold italic">deserves a chance</span>
+          <span className="text-gradient-gold italic">the horizon</span>
         </motion.h1>
 
         <motion.p
@@ -37,8 +37,8 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.55 }}
           className="font-body text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed mb-12"
         >
-          We connect ambitious students with life-changing scholarships.
-          No barriers, no complexity — just opportunity.
+          Next Horizon removes the barriers between talented students
+          and the scholarships that will shape their futures.
         </motion.p>
 
         <motion.div
