@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <footer className="py-12 px-6 border-t border-border/50">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="font-display text-lg font-semibold text-foreground">
-          Next Horizon<span className="text-gradient-gold">.</span>
+    <footer className="py-16 px-6 border-t border-border">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="font-display text-xs font-medium tracking-ultra-wide uppercase text-foreground">
+          Next Horizon
         </p>
-        <p className="font-body text-sm text-muted-foreground">
-          © 2024 Next Horizon Scholarships. All rights reserved.
+        <p className="font-body text-xs font-light text-muted-foreground tracking-wider">
+          © 2025 Next Horizon. All rights reserved.
         </p>
       </div>
     </footer>
