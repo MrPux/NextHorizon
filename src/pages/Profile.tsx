@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Check, GraduationCap, FileText, DollarSign, Building2, User, ShieldAlert } from "lucide-react";
+import { ArrowLeft, Check, GraduationCap, FileText, DollarSign, Building2, User, ShieldAlert, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const steps = [
   {
@@ -40,6 +41,8 @@ const steps = [
 ];
 
 const Profile = () => {
+  const [insuranceOpen, setInsuranceOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Top bar */}
@@ -132,6 +135,44 @@ const Profile = () => {
                     <p className="text-sm text-muted-foreground font-light mt-1 leading-relaxed">
                       {step.description}
                     </p>
+
+                    {/* Insurance contact dropdown */}
+                    {step.title === "Insurance Funds" && (
+                      <div className="mt-3">
+                        <button
+                          onClick={() => setInsuranceOpen(!insuranceOpen)}
+                          className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          <span>Local contacts for insurance</span>
+                          <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${insuranceOpen ? "rotate-180" : ""}`} />
+                        </button>
+                        {insuranceOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            transition={{ duration: 0.2 }}
+                            className="mt-2 rounded-lg bg-card border border-border px-4 py-3 space-y-2"
+                          >
+                            <div className="flex justify-between text-xs">
+                              <span className="text-muted-foreground">Contact</span>
+                              <span className="text-foreground font-medium">Local Insurance Office</span>
+                            </div>
+                            <div className="flex justify-between text-xs">
+                              <span className="text-muted-foreground">Phone</span>
+                              <span className="text-foreground font-medium">(555) 123-4567</span>
+                            </div>
+                            <div className="flex justify-between text-xs">
+                              <span className="text-muted-foreground">Email</span>
+                              <span className="text-foreground font-medium">insurance@nexthorizon.org</span>
+                            </div>
+                            <div className="flex justify-between text-xs">
+                              <span className="text-muted-foreground">Location</span>
+                              <span className="text-foreground font-medium">123 Main St, Suite 200</span>
+                            </div>
+                          </motion.div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
