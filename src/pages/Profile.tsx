@@ -6,25 +6,29 @@ const steps = [
     icon: FileText,
     title: "Application Submitted",
     description: "Your scholarship application has been received and reviewed.",
-    date: "Jan 12, 2026",
+    date: "Feb 2, 2026",
+    completed: true,
   },
   {
     icon: Check,
     title: "Eligibility Verified",
     description: "All documentation and eligibility requirements have been confirmed.",
-    date: "Jan 28, 2026",
+    date: "Feb 6, 2026",
+    completed: true,
   },
   {
     icon: Building2,
     title: "University Acceptance",
-    description: "Congratulations — you've been accepted to your university program.",
-    date: "Feb 5, 2026",
+    description: "Pending — awaiting university admission decision.",
+    date: "Pending",
+    completed: false,
   },
   {
     icon: DollarSign,
     title: "Scholarship Awarded",
-    description: "Your Next Horizon scholarship has been confirmed and funds are being processed.",
-    date: "Feb 8, 2026",
+    description: "Will be confirmed upon university acceptance.",
+    date: "—",
+    completed: false,
   },
 ];
 
@@ -63,18 +67,18 @@ const Profile = () => {
               </div>
               <div>
                 <h1 className="text-2xl font-semibold tracking-tight text-foreground">
-                  Maria Gonzalez
+                  Ashly Cobo
                 </h1>
                 <p className="text-sm text-muted-foreground font-light">
-                  Applicant · Next Horizon Scholar
+                  Applicant · Awaiting University Decision
                 </p>
               </div>
             </div>
 
             {/* Status badge */}
-            <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium">
+            <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-400 px-4 py-2 rounded-full text-sm font-medium">
               <GraduationCap className="h-4 w-4" />
-              Scholarship Awarded
+              University Acceptance Pending
             </div>
           </motion.div>
 
@@ -104,8 +108,10 @@ const Profile = () => {
                   )}
 
                   {/* Icon */}
-                  <div className="relative z-10 flex-shrink-0 h-10 w-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
-                    <step.icon className="h-4 w-4 text-emerald-400" />
+                  <div className={`relative z-10 flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center ${
+                    step.completed ? "bg-emerald-500/10" : "bg-card"
+                  }`}>
+                    <step.icon className={`h-4 w-4 ${step.completed ? "text-emerald-400" : "text-muted-foreground"}`} />
                   </div>
 
                   {/* Content */}
@@ -137,11 +143,11 @@ const Profile = () => {
 
             <div className="rounded-2xl bg-card p-8 space-y-5">
               {[
-                { label: "Award Amount", value: "$15,000" },
-                { label: "University", value: "University of California, Berkeley" },
-                { label: "Program", value: "B.S. Computer Science" },
+                { label: "Award Amount", value: "Pending" },
+                { label: "University", value: "To be determined" },
+                { label: "Program", value: "Pre-Medicine / Biology (B.S.)" },
                 { label: "Academic Year", value: "2026 – 2027" },
-                { label: "Status", value: "Confirmed" },
+                { label: "Status", value: "Awaiting Acceptance" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center justify-between">
                   <span className="text-sm text-muted-foreground font-light">{item.label}</span>
