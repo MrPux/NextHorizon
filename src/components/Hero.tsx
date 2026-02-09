@@ -4,79 +4,57 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
-      {/* Vivid orbs for depth */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          animate={{ x: [0, 25, 0], y: [0, -15, 0] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[30%] right-[20%] w-[400px] h-[400px] rounded-full bg-primary/15 blur-[90px]"
-        />
-        <motion.div
-          animate={{ x: [0, -20, 0], y: [0, 20, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[55%] left-[15%] w-[300px] h-[300px] rounded-full bg-[hsl(220_40%_30%/0.2)] blur-[80px]"
-        />
-        <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[45%] left-1/2 -translate-x-1/2 w-[600px] h-[2px] bg-gradient-to-r from-transparent via-primary/15 to-transparent"
-        />
-      </div>
-
-      <div className="relative z-10 max-w-2xl mx-auto text-center">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6">
+      <div className="max-w-3xl mx-auto text-center">
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="text-[11px] font-body font-light tracking-ultra-wide uppercase text-muted-foreground mb-12"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-sm font-medium text-warm mb-6"
         >
-          You crossed one frontier. Now cross the next.
+          Scholarships for immigrant students
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.5 }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-foreground mb-8"
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-5xl md:text-7xl lg:text-[80px] font-semibold leading-[1.05] tracking-tight text-foreground text-balance mb-6"
         >
-          The journey
-          <br />
-          <span className="text-gradient-warm">doesn't end here</span>
+          The journey doesn't end here.
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="font-body text-sm md:text-base font-light text-muted-foreground max-w-md mx-auto leading-relaxed mb-14"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-lg md:text-xl text-muted-foreground font-light max-w-xl mx-auto leading-relaxed mb-10"
         >
-          You left everything behind to build something new.
-          Next Horizon is here to make sure education is a frontier you don't have to cross alone.
+          You left everything behind to build something new. Next Horizon makes sure education is a frontier you don't cross alone.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.1 }}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 font-body text-xs font-light tracking-wider px-10 py-6 rounded-full group transition-all duration-500 glow-warm-hover"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium px-8 h-12 rounded-full group"
           >
             Apply for a Scholarship
-            <ArrowRight className="ml-3 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="lg"
+            className="text-muted-foreground hover:text-foreground text-sm font-medium px-8 h-12 rounded-full"
+          >
+            Learn more
           </Button>
         </motion.div>
       </div>
-
-      {/* Horizon line */}
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 1.8, delay: 1.4, ease: "easeOut" }}
-        className="absolute bottom-24 left-1/2 -translate-x-1/2 w-48 h-px horizon-line"
-      />
     </section>
   );
 };

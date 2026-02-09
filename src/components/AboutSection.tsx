@@ -1,76 +1,54 @@
 import { motion } from "framer-motion";
 
+const steps = [
+  {
+    title: "Arrive.",
+    description: "You've already made the hardest journey. Next Horizon meets you where you are and connects you to scholarships built for your story.",
+  },
+  {
+    title: "Apply.",
+    description: "One application. No barriers. We cut through the complexity so you can focus on your future, not paperwork.",
+  },
+  {
+    title: "Ascend.",
+    description: "Funding, mentorship, and a community that understands the road you've traveled — and believes in where you're going.",
+  },
+];
+
 const AboutSection = () => {
   return (
-    <section id="about" className="relative py-32 px-6 overflow-hidden">
-      {/* Background orbs for glass to blur */}
-      <div className="absolute inset-0 pointer-events-none">
+    <section id="about" className="py-28 md:py-40 px-6">
+      <div className="max-w-5xl mx-auto">
         <motion.div
-          animate={{ x: [0, 40, 0], y: [0, -20, 0] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[20%] left-[5%] w-[300px] h-[300px] rounded-full bg-primary/15 blur-[80px]"
-        />
-        <motion.div
-          animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
-          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[40%] right-[10%] w-[250px] h-[250px] rounded-full bg-[hsl(220_40%_30%/0.2)] blur-[70px]"
-        />
-        <motion.div
-          animate={{ x: [0, 20, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-[10%] left-[35%] w-[200px] h-[200px] rounded-full bg-primary/10 blur-[60px]"
-        />
-      </div>
-
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-20 md:mb-28"
         >
-          <p className="text-[11px] font-body font-light tracking-ultra-wide uppercase text-primary mb-6">
-            The Next Frontier
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl font-medium text-foreground leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground text-balance leading-[1.1]">
             One border crossed.
             <br />
-            <span className="text-gradient-warm">Another horizon ahead.</span>
+            <span className="text-muted-foreground">Another horizon ahead.</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              num: "01",
-              title: "Arrive",
-              desc: "You've already made the hardest journey. Next Horizon meets you where you are and connects you to scholarships built for your story.",
-            },
-            {
-              num: "02",
-              title: "Apply",
-              desc: "One application. No barriers. We cut through the complexity so you can focus on your future, not paperwork.",
-            },
-            {
-              num: "03",
-              title: "Ascend",
-              desc: "Funding, mentorship, and a community that understands the road you've traveled — and believes in where you're going.",
-            },
-          ].map((item, i) => (
+        <div className="grid md:grid-cols-3 gap-2">
+          {steps.map((step, i) => (
             <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 15 }}
+              key={step.title}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="glass rounded-2xl p-10 group hover:glow-warm transition-all duration-500"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="rounded-2xl bg-card p-8 md:p-10"
             >
-              <p className="text-[11px] font-body font-light tracking-ultra-wide text-primary/60 mb-6 group-hover:text-primary transition-colors duration-500">
-                {item.num}
+              <h3 className="text-2xl font-semibold text-foreground tracking-tight mb-3">
+                {step.title}
+              </h3>
+              <p className="text-[15px] text-muted-foreground font-light leading-relaxed">
+                {step.description}
               </p>
-              <p className="font-display text-lg font-medium text-foreground mb-4">{item.title}</p>
-              <p className="font-body text-sm font-light text-muted-foreground leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>
