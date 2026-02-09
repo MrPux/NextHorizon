@@ -53,15 +53,12 @@ const Profile = () => {
         className="fixed top-0 left-0 right-0 h-12 flex items-center justify-between px-6 md:px-12 z-50"
       >
         <span className="text-sm font-medium text-foreground">Next Horizon</span>
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-medium text-foreground">Next Horizon</span>
-          <a
-            href="/"
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Log out
-          </a>
-        </div>
+        <a
+          href="/"
+          className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Log out
+        </a>
       </motion.div>
 
       <div className="pt-24 pb-20 px-6">
