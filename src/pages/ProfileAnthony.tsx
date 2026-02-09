@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Check, GraduationCap, FileText, DollarSign, Building2, User, ShieldAlert } from "lucide-react";
+import { Check, GraduationCap, FileText, DollarSign, Building2, User, ShieldAlert } from "lucide-react";
 
 const steps = [
   {
@@ -58,21 +58,21 @@ const ProfileAnthony = () => {
         </a>
       </motion.div>
 
-      <div className="pt-24 pb-20 px-6">
+      <div className="pt-16 pb-12 px-4 sm:px-6">
         <div className="max-w-2xl mx-auto">
           {/* Profile header */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-16"
+            className="mb-10 sm:mb-16"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="h-14 w-14 rounded-full bg-emerald-500/10 flex items-center justify-center">
                 <User className="h-6 w-6 text-emerald-400" />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold tracking-tight text-foreground">
+                <h1 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
                   Anthony
                 </h1>
                 <p className="text-sm text-muted-foreground font-light">
@@ -93,12 +93,12 @@ const ProfileAnthony = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mb-16 text-center py-12 rounded-3xl bg-emerald-500/5 border border-emerald-500/10"
+            className="mb-10 sm:mb-16 text-center py-8 sm:py-12 rounded-3xl bg-emerald-500/5 border border-emerald-500/10"
           >
             <p className="text-xs font-medium text-emerald-400 uppercase tracking-widest mb-3">
               Total Award
             </p>
-            <h2 className="text-7xl md:text-8xl font-bold tracking-tighter text-foreground">
+            <h2 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tighter text-foreground">
               $45<span className="text-emerald-400">,</span>000
             </h2>
             <p className="text-sm text-muted-foreground font-light mt-3">
@@ -111,7 +111,7 @@ const ProfileAnthony = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="mb-16"
+            className="mb-10 sm:mb-16"
           >
             <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-8">
               Application Progress
@@ -124,7 +124,7 @@ const ProfileAnthony = () => {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.45 + i * 0.1 }}
-                  className="relative flex gap-5"
+                  className="relative flex gap-3 sm:gap-5"
                 >
                   {i < steps.length - 1 && (
                     <div className="absolute left-[19px] top-10 bottom-0 w-px bg-emerald-500/20" />
@@ -134,14 +134,14 @@ const ProfileAnthony = () => {
                     <step.icon className="h-4 w-4 text-emerald-400" />
                   </div>
 
-                  <div className="pb-10">
-                    <div className="flex items-baseline gap-3">
-                      <h3 className="text-[15px] font-medium text-foreground">
+                  <div className="pb-8 sm:pb-10 min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-3">
+                      <h3 className="text-sm sm:text-[15px] font-medium text-foreground">
                         {step.title}
                       </h3>
                       <span className="text-xs text-muted-foreground">{step.date}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground font-light mt-1 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-muted-foreground font-light mt-1 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -160,7 +160,7 @@ const ProfileAnthony = () => {
               Award Details
             </h2>
 
-            <div className="rounded-2xl bg-card p-8 space-y-5">
+            <div className="rounded-2xl bg-card p-5 sm:p-8 space-y-4 sm:space-y-5">
               {[
                 { label: "Award Amount", value: "$45,000" },
                 { label: "University", value: "Oglethorpe University" },
