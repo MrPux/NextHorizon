@@ -13,10 +13,27 @@ const Login = () => {
   const toggleMode = () => setIsSignUp((prev) => !prev);
 
   const inputClass =
-    "bg-card border-border text-foreground placeholder:text-muted-foreground/50 text-sm h-12 rounded-xl focus:border-ring focus:ring-1 focus:ring-ring/20 transition-all duration-200";
+    "bg-foreground/[0.06] border-foreground/[0.08] text-foreground placeholder:text-muted-foreground/40 text-sm h-12 rounded-xl focus:border-foreground/20 focus:ring-1 focus:ring-foreground/10 transition-all duration-200 backdrop-blur-sm";
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-6 bg-background">
+    <div className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
+      {/* Ambient background orbs for glass effect */}
+      <motion.div
+        className="absolute top-1/4 -left-32 w-[400px] h-[400px] rounded-full bg-warm/20 blur-[120px]"
+        animate={{ x: [0, 40, 0], y: [0, -30, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-1/4 -right-32 w-[350px] h-[350px] rounded-full bg-foreground/[0.06] blur-[100px]"
+        animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-warm/10 blur-[150px]"
+        animate={{ scale: [1, 1.15, 1] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       {/* Back */}
       <motion.a
         href="/"
@@ -44,100 +61,127 @@ const Login = () => {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="w-full max-w-sm"
+        className="relative w-full max-w-md"
       >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={isSignUp ? "signup" : "login"}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="text-center mb-10">
-              <h1 className="text-3xl font-semibold tracking-tight text-foreground mb-2">
-                {isSignUp ? "Create your account" : "Welcome back"}
-              </h1>
-              <p className="text-sm text-muted-foreground font-light">
-                {isSignUp
-                  ? "Start your journey with Next Horizon."
-                  : "Sign in to continue your journey."}
-              </p>
-            </div>
+        {/* Glass card */}
+        <div className="relative rounded-3xl border border-foreground/[0.08] bg-foreground/[0.04] backdrop-blur-2xl p-10 shadow-[0_8px_60px_-12px_hsl(var(--warm)/0.15)]">
+          {/* Inner glow */}
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-foreground/[0.06] to-transparent pointer-events-none" />
 
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
-              {isSignUp && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.25 }}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={isSignUp ? "signup" : "login"}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3 }}
+              className="relative z-10"
+            >
+              <div className="text-center mb-10">
+                <motion.h1
+                  className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground mb-3 leading-[1.1]"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.15 }}
                 >
-                  <Input
-                    type="text"
-                    placeholder="Full name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className={inputClass}
-                  />
-                </motion.div>
-              )}
-
-              <Input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className={inputClass}
-              />
-
-              <Input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className={inputClass}
-              />
-
-              {!isSignUp && (
-                <div className="flex justify-end pt-1">
-                  <button
-                    type="button"
-                    className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Forgot password?
-                  </button>
-                </div>
-              )}
-
-              <div className="pt-3">
-                <Button
-                  type="submit"
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium h-12 rounded-full group"
+                  {isSignUp ? (
+                    <>
+                      Join the <br />
+                      <span className="text-gradient-warm">Next Horizon</span>
+                    </>
+                  ) : (
+                    <>
+                      Welcome <br />
+                      <span className="text-gradient-warm">back</span>
+                    </>
+                  )}
+                </motion.h1>
+                <motion.p
+                  className="text-sm text-muted-foreground font-light"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.25 }}
                 >
-                  {isSignUp ? "Create account" : "Sign in"}
-                  <ArrowRight className="ml-2 h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </Button>
+                  {isSignUp
+                    ? "Your future starts here."
+                    : "Great to see you again."}
+                </motion.p>
               </div>
-            </form>
 
-            <div className="flex items-center gap-4 my-8">
-              <div className="flex-1 h-px bg-border" />
-              <span className="text-xs text-muted-foreground/50">or</span>
-              <div className="flex-1 h-px bg-border" />
-            </div>
+              <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
+                {isSignUp && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <Input
+                      type="text"
+                      placeholder="Full name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className={inputClass}
+                    />
+                  </motion.div>
+                )}
 
-            <p className="text-center text-sm text-muted-foreground">
-              {isSignUp ? "Already have an account?" : "New to Next Horizon?"}{" "}
-              <button
-                onClick={toggleMode}
-                className="text-foreground hover:text-foreground/80 transition-colors font-medium"
-              >
-                {isSignUp ? "Sign in" : "Create account"}
-              </button>
-            </p>
-          </motion.div>
-        </AnimatePresence>
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={inputClass}
+                />
+
+                <Input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={inputClass}
+                />
+
+                {!isSignUp && (
+                  <div className="flex justify-end pt-1">
+                    <button
+                      type="button"
+                      className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      Forgot password?
+                    </button>
+                  </div>
+                )}
+
+                <div className="pt-3">
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium h-12 rounded-full group"
+                  >
+                    {isSignUp ? "Create account" : "Sign in"}
+                    <ArrowRight className="ml-2 h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </Button>
+                </div>
+              </form>
+
+              <div className="flex items-center gap-4 my-8">
+                <div className="flex-1 h-px bg-foreground/[0.08]" />
+                <span className="text-xs text-muted-foreground/50">or</span>
+                <div className="flex-1 h-px bg-foreground/[0.08]" />
+              </div>
+
+              <p className="text-center text-sm text-muted-foreground">
+                {isSignUp ? "Already have an account?" : "New to Next Horizon?"}{" "}
+                <button
+                  onClick={toggleMode}
+                  className="text-foreground hover:text-foreground/80 transition-colors font-medium"
+                >
+                  {isSignUp ? "Sign in" : "Create account"}
+                </button>
+              </p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </motion.div>
     </div>
   );
