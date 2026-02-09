@@ -14,8 +14,8 @@ const Navbar = () => {
       </a>
 
       <div className="flex items-center gap-4">
-        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground font-body text-xs font-light tracking-wider">
-          Log in
+        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground font-body text-xs font-light tracking-wider" asChild>
+          <a href="/login">Log in</a>
         </Button>
         <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 font-body text-xs font-light tracking-wider px-6 rounded-full glow-warm-hover transition-all duration-500">
           Apply
