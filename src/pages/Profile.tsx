@@ -158,16 +158,8 @@ const Profile = () => {
                               <span className="text-foreground font-medium">Local Insurance Office</span>
                             </div>
                             <div className="flex justify-between text-xs">
-                              <span className="text-muted-foreground">Phone</span>
-                              <span className="text-foreground font-medium">(555) 123-4567</span>
-                            </div>
-                            <div className="flex justify-between text-xs">
                               <span className="text-muted-foreground">Email</span>
                               <span className="text-foreground font-medium">insurance@nexthorizon.org</span>
-                            </div>
-                            <div className="flex justify-between text-xs">
-                              <span className="text-muted-foreground">Location</span>
-                              <span className="text-foreground font-medium">123 Main St, Suite 200</span>
                             </div>
                           </motion.div>
                         )}
