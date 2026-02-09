@@ -4,7 +4,13 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+      {/* Ambient horizon glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] rounded-full bg-primary/[0.04] blur-[100px]" />
+        <div className="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] rounded-full bg-primary/[0.06] blur-[80px]" />
+      </div>
+
       <div className="relative z-10 max-w-2xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0 }}
@@ -23,7 +29,7 @@ const Hero = () => {
         >
           The journey
           <br />
-          doesn't end here
+          <span className="text-gradient-warm">doesn't end here</span>
         </motion.h1>
 
         <motion.p
@@ -43,7 +49,7 @@ const Hero = () => {
         >
           <Button
             size="lg"
-            className="bg-foreground text-background hover:bg-foreground/90 font-body text-xs font-light tracking-wider px-10 py-6 rounded-full group transition-shadow duration-500 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.15)]"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 font-body text-xs font-light tracking-wider px-10 py-6 rounded-full group transition-all duration-500 glow-warm-hover"
           >
             Apply for a Scholarship
             <ArrowRight className="ml-3 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
@@ -51,12 +57,12 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Minimal decorative line */}
+      {/* Horizon line */}
       <motion.div
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 1 }}
-        transition={{ duration: 1.2, delay: 1.4 }}
-        className="absolute bottom-16 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent via-muted-foreground/20 to-transparent origin-top"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1.8, delay: 1.4, ease: "easeOut" }}
+        className="absolute bottom-24 left-1/2 -translate-x-1/2 w-48 h-px horizon-line"
       />
     </section>
   );

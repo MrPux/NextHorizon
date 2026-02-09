@@ -11,17 +11,17 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <p className="text-[11px] font-body font-light tracking-ultra-wide uppercase text-muted-foreground mb-6">
+          <p className="text-[11px] font-body font-light tracking-ultra-wide uppercase text-primary mb-6">
             The Next Frontier
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-medium text-foreground leading-tight">
             One border crossed.
             <br />
-            Another horizon ahead.
+            <span className="text-gradient-warm">Another horizon ahead.</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border">
+        <div className="grid md:grid-cols-3 gap-6">
           {[
             {
               num: "01",
@@ -45,9 +45,9 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="bg-background p-10 group"
+              className="bg-card p-10 rounded-lg border border-border hover:border-primary/20 transition-all duration-500 group hover:glow-warm"
             >
-              <p className="text-[11px] font-body font-light tracking-ultra-wide text-muted-foreground mb-6">
+              <p className="text-[11px] font-body font-light tracking-ultra-wide text-primary/60 mb-6 group-hover:text-primary transition-colors duration-500">
                 {item.num}
               </p>
               <p className="font-display text-lg font-medium text-foreground mb-4">{item.title}</p>
