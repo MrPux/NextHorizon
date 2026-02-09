@@ -49,13 +49,7 @@ const ProfileAnthony = () => {
         transition={{ duration: 0.4 }}
         className="fixed top-0 left-0 right-0 h-12 flex items-center justify-between px-6 md:px-12 z-50"
       >
-        <a
-          href="/"
-          className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-xs"
-        >
-          <ArrowLeft className="h-3.5 w-3.5" />
-          Home
-        </a>
+        <span className="text-sm font-medium text-foreground">Next Horizon</span>
         <div className="flex items-center gap-3">
           <span className="text-sm font-medium text-foreground">Next Horizon</span>
           <a
