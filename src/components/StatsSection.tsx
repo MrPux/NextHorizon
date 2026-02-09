@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "2,400+", label: "Scholarships Awarded" },
-  { value: "$12M", label: "In Funding Distributed" },
-  { value: "96%", label: "Graduation Rate" },
+  { value: "2,400+", label: "Immigrant Students Funded" },
+  { value: "$12M", label: "In Scholarships Awarded" },
+  { value: "96%", label: "Continued to Graduate" },
   { value: "48", label: "Partner Universities" },
 ];
 
