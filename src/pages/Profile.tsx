@@ -59,7 +59,15 @@ const Profile = () => {
           <ArrowLeft className="h-3.5 w-3.5" />
           Home
         </a>
-        <span className="text-sm font-medium text-foreground">Next Horizon</span>
+        <div className="flex items-center gap-3">
+          <span className="text-sm font-medium text-foreground">Next Horizon</span>
+          <a
+            href="/"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Log out
+          </a>
+        </div>
       </motion.div>
 
       <div className="pt-24 pb-20 px-6">
