@@ -19,19 +19,28 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-28 md:py-40 px-6">
       <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-20 md:mb-28"
-        >
+        <div className="text-center mb-20 md:mb-28">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground text-balance leading-[1.1]">
-            One border crossed.
-            <br />
-            <span className="text-muted-foreground">Another horizon ahead.</span>
+            <motion.span
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+              className="block"
+            >
+              One border crossed.
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+              className="block text-muted-foreground"
+            >
+              Another horizon ahead.
+            </motion.span>
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-2">
           {steps.map((step, i) => (
