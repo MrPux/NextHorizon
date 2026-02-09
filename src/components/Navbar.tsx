@@ -6,18 +6,18 @@ const Navbar = () => {
     <motion.nav
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-6 bg-background/60 backdrop-blur-xl"
+      transition={{ duration: 0.6 }}
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-12 bg-background/80 backdrop-blur-xl backdrop-saturate-150 border-b border-border/50"
     >
-      <a href="/" className="font-display text-sm font-medium tracking-ultra-wide uppercase text-foreground">
-        Next<span className="text-primary"> Horizon</span>
+      <a href="/" className="text-sm font-medium text-foreground tracking-tight">
+        Next Horizon
       </a>
 
-      <div className="flex items-center gap-4">
-        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground font-body text-xs font-light tracking-wider" asChild>
+      <div className="flex items-center gap-1">
+        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground text-xs h-8 px-3 rounded-full" asChild>
           <a href="/login">Log in</a>
         </Button>
-        <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 font-body text-xs font-light tracking-wider px-6 rounded-full glow-warm-hover transition-all duration-500">
+        <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 text-xs h-8 px-4 rounded-full font-medium">
           Apply
         </Button>
       </div>

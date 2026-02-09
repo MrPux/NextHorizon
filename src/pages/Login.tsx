@@ -3,10 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,39 +12,18 @@ const Login = () => {
 
   const toggleMode = () => setIsSignUp((prev) => !prev);
 
-  return (
-    <div className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
-      {/* Visible orbs that glass blurs over */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Large warm orb — top right, overlaps card */}
-        <motion.div
-          animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[25%] right-[15%] w-[350px] h-[350px] rounded-full bg-primary/20 blur-[80px]"
-        />
-        {/* Smaller accent orb — left side */}
-        <motion.div
-          animate={{ x: [0, -20, 0], y: [0, 25, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[50%] left-[10%] w-[250px] h-[250px] rounded-full bg-primary/15 blur-[70px]"
-        />
-        {/* Cool-toned orb — bottom center */}
-        <motion.div
-          animate={{ x: [0, 15, 0], y: [0, -15, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-[15%] left-[40%] w-[300px] h-[300px] rounded-full bg-[hsl(220_40%_30%/0.25)] blur-[90px]"
-        />
-        {/* Thin horizon gradient line behind everything */}
-        <div className="absolute top-[48%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      </div>
+  const inputClass =
+    "bg-card border-border text-foreground placeholder:text-muted-foreground/50 text-sm h-12 rounded-xl focus:border-ring focus:ring-1 focus:ring-ring/20 transition-all duration-200";
 
-      {/* Back button */}
+  return (
+    <div className="relative min-h-screen flex items-center justify-center px-6 bg-background">
+      {/* Back */}
       <motion.a
         href="/"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="fixed top-6 left-8 md:left-16 flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-300 text-xs font-body font-light tracking-wider z-50"
+        transition={{ duration: 0.4 }}
+        className="fixed top-0 left-0 h-12 flex items-center gap-2 px-6 md:px-12 text-muted-foreground hover:text-foreground transition-colors text-xs z-50"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
         Back
@@ -57,77 +34,61 @@ const Login = () => {
         href="/"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="fixed top-6 right-8 md:right-16 font-display text-sm font-medium tracking-ultra-wide uppercase text-foreground z-50"
+        transition={{ duration: 0.4 }}
+        className="fixed top-0 right-0 h-12 flex items-center px-6 md:px-12 text-sm font-medium text-foreground z-50"
       >
-        Next<span className="text-primary"> Horizon</span>
+        Next Horizon
       </motion.a>
 
-      <div className="relative z-10 w-full max-w-sm">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="w-full max-w-sm"
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={isSignUp ? "signup" : "login"}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="glass rounded-2xl p-10"
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.3 }}
           >
-            {/* Header */}
-            <div className="text-center mb-12">
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-[11px] font-body font-light tracking-ultra-wide uppercase text-muted-foreground mb-5"
-              >
-                {isSignUp ? "Begin your journey" : "Welcome back"}
-              </motion.p>
-              <motion.h1
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                className="font-display text-3xl md:text-4xl font-medium tracking-tight text-foreground"
-              >
-                {isSignUp ? (
-                  <>Cross the next <span className="text-gradient-warm">horizon</span></>
-                ) : (
-                  <>Continue your <span className="text-gradient-warm">journey</span></>
-                )}
-              </motion.h1>
+            <div className="text-center mb-10">
+              <h1 className="text-3xl font-semibold tracking-tight text-foreground mb-2">
+                {isSignUp ? "Create your account" : "Welcome back"}
+              </h1>
+              <p className="text-sm text-muted-foreground font-light">
+                {isSignUp
+                  ? "Start your journey with Next Horizon."
+                  : "Sign in to continue your journey."}
+              </p>
             </div>
 
-            {/* Form */}
-            <motion.form
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              onSubmit={(e) => e.preventDefault()}
-              className="space-y-4"
-            >
+            <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
               {isSignUp && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.25 }}
                 >
                   <Input
                     type="text"
                     placeholder="Full name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="glass-input border-0 text-foreground placeholder:text-muted-foreground font-body text-sm font-light h-12 rounded-xl focus:border-primary/40 focus:ring-primary/20 transition-all duration-300"
+                    className={inputClass}
                   />
                 </motion.div>
               )}
 
               <Input
                 type="email"
-                placeholder="Email address"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="glass-input border-0 text-foreground placeholder:text-muted-foreground font-body text-sm font-light h-12 rounded-xl focus:border-primary/40 focus:ring-primary/20 transition-all duration-300"
+                className={inputClass}
               />
 
               <Input
@@ -135,69 +96,49 @@ const Login = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="glass-input border-0 text-foreground placeholder:text-muted-foreground font-body text-sm font-light h-12 rounded-xl focus:border-primary/40 focus:ring-primary/20 transition-all duration-300"
+                className={inputClass}
               />
 
               {!isSignUp && (
-                <div className="flex justify-end">
+                <div className="flex justify-end pt-1">
                   <button
                     type="button"
-                    className="text-[11px] font-body font-light text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wider"
+                    className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Forgot password?
                   </button>
                 </div>
               )}
 
-              <div className="pt-4">
+              <div className="pt-3">
                 <Button
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-body text-xs font-light tracking-wider h-12 rounded-full glow-warm-hover transition-all duration-500 group"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium h-12 rounded-full group"
                 >
                   {isSignUp ? "Create account" : "Sign in"}
-                  <ArrowRight className="ml-2 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </Button>
               </div>
-            </motion.form>
+            </form>
 
-            {/* Divider */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="flex items-center gap-4 my-8"
-            >
+            <div className="flex items-center gap-4 my-8">
               <div className="flex-1 h-px bg-border" />
-              <span className="text-[10px] font-body font-light text-muted-foreground tracking-widest uppercase">or</span>
+              <span className="text-xs text-muted-foreground/50">or</span>
               <div className="flex-1 h-px bg-border" />
-            </motion.div>
+            </div>
 
-            {/* Toggle */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-center text-xs font-body font-light text-muted-foreground"
-            >
+            <p className="text-center text-sm text-muted-foreground">
               {isSignUp ? "Already have an account?" : "New to Next Horizon?"}{" "}
               <button
                 onClick={toggleMode}
-                className="text-primary hover:text-primary/80 transition-colors duration-300 font-normal"
+                className="text-foreground hover:text-foreground/80 transition-colors font-medium"
               >
-                {isSignUp ? "Sign in" : "Create an account"}
+                {isSignUp ? "Sign in" : "Create account"}
               </button>
-            </motion.p>
+            </p>
           </motion.div>
         </AnimatePresence>
-      </div>
-
-      {/* Bottom horizon line */}
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 1.8, delay: 0.8, ease: "easeOut" }}
-        className="absolute bottom-16 left-1/2 -translate-x-1/2 w-32 h-px horizon-line"
-      />
+      </motion.div>
     </div>
   );
 };
