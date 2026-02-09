@@ -43,7 +43,7 @@ const Hero = () => {
         >
           <Button
             size="lg"
-            className="bg-foreground text-background hover:bg-foreground/90 font-body text-xs font-light tracking-wider px-10 py-6 rounded-none group"
+            className="bg-foreground text-background hover:bg-foreground/90 font-body text-xs font-light tracking-wider px-10 py-6 rounded-full group transition-shadow duration-500 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.15)]"
           >
             Apply for a Scholarship
             <ArrowRight className="ml-3 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />

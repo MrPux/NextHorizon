@@ -24,7 +24,7 @@ const Navbar = () => {
         <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground font-body text-xs font-light tracking-wider">
           Log in
         </Button>
-        <Button size="sm" className="bg-foreground text-background hover:bg-foreground/90 font-body text-xs font-light tracking-wider px-5 rounded-none">
+        <Button size="sm" className="bg-foreground text-background hover:bg-foreground/90 font-body text-xs font-light tracking-wider px-6 rounded-full border border-foreground/20">
           Apply
         </Button>
       </div>
