@@ -14,8 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
+        display: ['Syne', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
+      },
+      letterSpacing: {
+        'ultra-wide': '0.25em',
       },
       colors: {
         border: "hsl(var(--border))",
@@ -50,11 +53,6 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
-        gold: {
-          DEFAULT: "hsl(var(--primary))",
-          glow: "hsl(var(--gold-glow))",
-          subtle: "hsl(var(--gold-subtle))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
