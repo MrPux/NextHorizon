@@ -12,27 +12,27 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <p className="text-sm font-body font-medium tracking-[0.2em] uppercase text-primary mb-4">
-            Our Mission
+            Why Next Horizon
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground leading-tight">
-            Breaking barriers to <br />
-            <span className="italic text-gradient-gold">higher education</span>
+            Your launchpad to <br />
+            <span className="italic text-gradient-gold">what's next</span>
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              title: "Discover",
-              desc: "Browse scholarships tailored to your background, field of study, and aspirations.",
+              title: "Explore",
+              desc: "Next Horizon matches you with scholarships aligned to your goals, background, and field of study.",
             },
             {
               title: "Apply",
-              desc: "One streamlined application. No redundant forms. We respect your time.",
+              desc: "One application. Zero friction. Next Horizon streamlines everything so you can focus on what matters.",
             },
             {
-              title: "Succeed",
-              desc: "Receive funding, mentorship, and a community that champions your growth.",
+              title: "Thrive",
+              desc: "Funding is just the start. Next Horizon provides mentorship and a community invested in your success.",
             },
           ].map((item, i) => (
             <motion.div
