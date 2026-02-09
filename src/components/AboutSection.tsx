@@ -22,7 +22,7 @@ const AboutSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ margin: "-100px" }}
           transition={{ duration: 0.7 }}
           className="text-center mb-20 md:mb-28"
         >
@@ -39,7 +39,7 @@ const AboutSection = () => {
               key={step.title}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="rounded-2xl bg-card p-8 md:p-10"
             >
