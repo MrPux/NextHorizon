@@ -17,7 +17,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-sm font-body font-medium tracking-[0.2em] uppercase text-primary mb-8"
         >
-          Where ambition meets opportunity
+          You crossed one frontier. Now cross the next.
         </motion.p>
 
         <motion.h1
@@ -26,9 +26,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.35 }}
           className="font-display text-5xl md:text-7xl font-semibold leading-[1.1] tracking-tight text-foreground mb-6"
         >
-          Rise beyond
+          The journey
           <br />
-          <span className="text-gradient-gold italic">the horizon</span>
+          <span className="text-gradient-gold italic">doesn't end here</span>
         </motion.h1>
 
         <motion.p
@@ -37,8 +37,8 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.55 }}
           className="font-body text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed mb-12"
         >
-          Next Horizon removes the barriers between talented students
-          and the scholarships that will shape their futures.
+          You left everything behind to build something new.
+          Next Horizon is here to make sure the next frontier — education — is one you don't have to cross alone.
         </motion.p>
 
         <motion.div
