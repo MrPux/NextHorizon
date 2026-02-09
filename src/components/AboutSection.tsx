@@ -2,8 +2,27 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-32 px-6">
-      <div className="max-w-4xl mx-auto">
+    <section id="about" className="relative py-32 px-6 overflow-hidden">
+      {/* Background orbs for glass to blur */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          animate={{ x: [0, 40, 0], y: [0, -20, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[20%] left-[5%] w-[300px] h-[300px] rounded-full bg-primary/15 blur-[80px]"
+        />
+        <motion.div
+          animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
+          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[40%] right-[10%] w-[250px] h-[250px] rounded-full bg-[hsl(220_40%_30%/0.2)] blur-[70px]"
+        />
+        <motion.div
+          animate={{ x: [0, 20, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-[10%] left-[35%] w-[200px] h-[200px] rounded-full bg-primary/10 blur-[60px]"
+        />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
