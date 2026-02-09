@@ -27,7 +27,7 @@ const steps = [
     icon: Building2,
     title: "University Acceptance",
     description: "Accepted into Oglethorpe University — Engineering program.",
-    date: "Mar 5, 2025",
+    date: "Jul 28, 2025",
     completed: true,
   },
   {
