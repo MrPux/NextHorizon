@@ -1,14 +1,17 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [error, setError] = useState("");
 
   const toggleMode = () => setIsSignUp((prev) => !prev);
 
@@ -65,7 +68,15 @@ const Login = () => {
               </p>
             </div>
 
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              setError("");
+              if (email === "ashlycoboeducation@gmail.com" && password === "ashlycoboeducation") {
+                navigate("/profile");
+              } else {
+                setError("Invalid email or password.");
+              }
+            }} className="space-y-3">
               {isSignUp && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
@@ -108,6 +119,10 @@ const Login = () => {
                     Forgot password?
                   </button>
                 </div>
+              )}
+
+              {error && (
+                <p className="text-sm text-destructive text-center">{error}</p>
               )}
 
               <div className="pt-3">
