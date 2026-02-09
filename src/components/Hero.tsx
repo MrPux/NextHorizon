@@ -50,6 +50,7 @@ const Hero = () => {
             variant="ghost"
             size="lg"
             className="text-muted-foreground hover:text-foreground text-sm font-medium px-8 h-12 rounded-full"
+            onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
           >
             Learn more
           </Button>
