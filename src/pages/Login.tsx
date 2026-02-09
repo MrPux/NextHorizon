@@ -16,9 +16,11 @@ const Login = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
-      {/* Ambient glow */}
+      {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] rounded-full bg-primary/[0.03] blur-[100px]" />
+        <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-primary/[0.05] blur-[120px]" />
+        <div className="absolute top-[55%] left-[30%] w-[300px] h-[300px] rounded-full bg-primary/[0.03] blur-[80px]" />
+        <div className="absolute top-[45%] right-[25%] w-[250px] h-[250px] rounded-full bg-accent/[0.03] blur-[90px]" />
       </div>
 
       {/* Back button */}
@@ -52,6 +54,7 @@ const Login = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
+            className="glass rounded-2xl p-10"
           >
             {/* Header */}
             <div className="text-center mb-12">
@@ -97,7 +100,7 @@ const Login = () => {
                     placeholder="Full name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="bg-card border-border text-foreground placeholder:text-muted-foreground font-body text-sm font-light h-12 rounded-lg focus:border-primary/40 focus:ring-primary/20 transition-all duration-300"
+                    className="glass-input border-0 text-foreground placeholder:text-muted-foreground font-body text-sm font-light h-12 rounded-xl focus:border-primary/40 focus:ring-primary/20 transition-all duration-300"
                   />
                 </motion.div>
               )}
@@ -107,7 +110,7 @@ const Login = () => {
                 placeholder="Email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-card border-border text-foreground placeholder:text-muted-foreground font-body text-sm font-light h-12 rounded-lg focus:border-primary/40 focus:ring-primary/20 transition-all duration-300"
+                className="glass-input border-0 text-foreground placeholder:text-muted-foreground font-body text-sm font-light h-12 rounded-xl focus:border-primary/40 focus:ring-primary/20 transition-all duration-300"
               />
 
               <Input
@@ -115,7 +118,7 @@ const Login = () => {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="bg-card border-border text-foreground placeholder:text-muted-foreground font-body text-sm font-light h-12 rounded-lg focus:border-primary/40 focus:ring-primary/20 transition-all duration-300"
+                className="glass-input border-0 text-foreground placeholder:text-muted-foreground font-body text-sm font-light h-12 rounded-xl focus:border-primary/40 focus:ring-primary/20 transition-all duration-300"
               />
 
               {!isSignUp && (
