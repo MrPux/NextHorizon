@@ -13,9 +13,6 @@ const Navbar = () => {
         Next Horizon
       </a>
 
-      <div className="hidden md:flex items-center gap-10 text-xs font-body font-light tracking-wider text-muted-foreground">
-        <a href="#about" className="hover-line hover:text-foreground transition-colors duration-300">About</a>
-      </div>
 
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground font-body text-xs font-light tracking-wider">
