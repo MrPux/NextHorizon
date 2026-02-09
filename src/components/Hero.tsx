@@ -17,7 +17,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-sm font-body font-medium tracking-[0.2em] uppercase text-primary mb-8"
         >
-          Empowering futures since 2024
+          Empowering the next generation
         </motion.p>
 
         <motion.h1
