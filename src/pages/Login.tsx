@@ -60,8 +60,8 @@ const Login = () => {
               </h1>
               <p className="text-sm text-muted-foreground font-light">
                 {isSignUp
-                  ? "Start your journey with Next Horizon."
-                  : "Sign in to continue your journey."}
+                  ? "We're glad you're here."
+                  : "Good to see you again."}
               </p>
             </div>
 
