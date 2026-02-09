@@ -45,7 +45,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="bg-card p-10 rounded-lg border border-border hover:border-primary/20 transition-all duration-500 group hover:glow-warm"
+              className="glass rounded-2xl p-10 group hover:glow-warm transition-all duration-500"
             >
               <p className="text-[11px] font-body font-light tracking-ultra-wide text-primary/60 mb-6 group-hover:text-primary transition-colors duration-500">
                 {item.num}
