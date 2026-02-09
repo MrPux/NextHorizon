@@ -12,7 +12,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-sm font-medium text-warm mb-6"
         >
-          Scholarships for immigrant students
+          Scholarships that open doors
         </motion.p>
 
         <motion.h1
