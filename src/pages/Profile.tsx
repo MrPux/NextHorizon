@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Check, GraduationCap, FileText, DollarSign, Building2, User, ShieldAlert, ChevronDown } from "lucide-react";
+import { Check, GraduationCap, FileText, DollarSign, Building2, User, ShieldAlert, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 const steps = [
@@ -61,21 +61,21 @@ const Profile = () => {
         </a>
       </motion.div>
 
-      <div className="pt-24 pb-20 px-6">
+      <div className="pt-16 pb-12 px-4 sm:px-6">
         <div className="max-w-2xl mx-auto">
           {/* Profile header */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-16"
+            className="mb-10 sm:mb-16"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="h-14 w-14 rounded-full bg-card flex items-center justify-center">
                 <User className="h-6 w-6 text-muted-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-semibold tracking-tight text-foreground">
+                <h1 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
                   Ashly Cobo
                 </h1>
                 <p className="text-sm text-muted-foreground font-light">
@@ -96,7 +96,7 @@ const Profile = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mb-16"
+            className="mb-10 sm:mb-16"
           >
             <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-8">
               Application Progress
@@ -109,7 +109,7 @@ const Profile = () => {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.35 + i * 0.1 }}
-                  className="relative flex gap-5"
+                  className="relative flex gap-3 sm:gap-5"
                 >
                   {/* Vertical line */}
                   {i < steps.length - 1 && (
@@ -124,14 +124,14 @@ const Profile = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="pb-10">
-                    <div className="flex items-baseline gap-3">
-                      <h3 className="text-[15px] font-medium text-foreground">
+                  <div className="pb-8 sm:pb-10 min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-3">
+                      <h3 className="text-sm sm:text-[15px] font-medium text-foreground">
                         {step.title}
                       </h3>
                       <span className="text-xs text-muted-foreground">{step.date}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground font-light mt-1 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-muted-foreground font-light mt-1 leading-relaxed">
                       {step.description}
                     </p>
 
@@ -180,7 +180,7 @@ const Profile = () => {
               Award Details
             </h2>
 
-            <div className="rounded-2xl bg-card p-8 space-y-5">
+            <div className="rounded-2xl bg-card p-5 sm:p-8 space-y-4 sm:space-y-5">
               {[
                 { label: "Award Amount", value: "Pending" },
                 { label: "University", value: "To be determined" },
