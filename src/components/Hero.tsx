@@ -5,10 +5,23 @@ import { ArrowRight } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
-      {/* Ambient horizon glow */}
+      {/* Vivid orbs for depth */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] rounded-full bg-primary/[0.04] blur-[100px]" />
-        <div className="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] rounded-full bg-primary/[0.06] blur-[80px]" />
+        <motion.div
+          animate={{ x: [0, 25, 0], y: [0, -15, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[30%] right-[20%] w-[400px] h-[400px] rounded-full bg-primary/15 blur-[90px]"
+        />
+        <motion.div
+          animate={{ x: [0, -20, 0], y: [0, 20, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[55%] left-[15%] w-[300px] h-[300px] rounded-full bg-[hsl(220_40%_30%/0.2)] blur-[80px]"
+        />
+        <motion.div
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[45%] left-1/2 -translate-x-1/2 w-[600px] h-[2px] bg-gradient-to-r from-transparent via-primary/15 to-transparent"
+        />
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto text-center">

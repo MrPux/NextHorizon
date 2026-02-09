@@ -16,11 +16,28 @@ const Login = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-6 bg-background overflow-hidden">
-      {/* Ambient glows */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-primary/[0.05] blur-[120px]" />
-        <div className="absolute top-[55%] left-[30%] w-[300px] h-[300px] rounded-full bg-primary/[0.03] blur-[80px]" />
-        <div className="absolute top-[45%] right-[25%] w-[250px] h-[250px] rounded-full bg-accent/[0.03] blur-[90px]" />
+      {/* Visible orbs that glass blurs over */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Large warm orb — top right, overlaps card */}
+        <motion.div
+          animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[25%] right-[15%] w-[350px] h-[350px] rounded-full bg-primary/20 blur-[80px]"
+        />
+        {/* Smaller accent orb — left side */}
+        <motion.div
+          animate={{ x: [0, -20, 0], y: [0, 25, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[50%] left-[10%] w-[250px] h-[250px] rounded-full bg-primary/15 blur-[70px]"
+        />
+        {/* Cool-toned orb — bottom center */}
+        <motion.div
+          animate={{ x: [0, 15, 0], y: [0, -15, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-[15%] left-[40%] w-[300px] h-[300px] rounded-full bg-[hsl(220_40%_30%/0.25)] blur-[90px]"
+        />
+        {/* Thin horizon gradient line behind everything */}
+        <div className="absolute top-[48%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
       </div>
 
       {/* Back button */}
