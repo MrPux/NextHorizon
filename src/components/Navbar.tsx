@@ -15,9 +15,6 @@ const Navbar = () => {
 
       <div className="hidden md:flex items-center gap-10 text-xs font-body font-light tracking-wider text-muted-foreground">
         <a href="#about" className="hover-line hover:text-foreground transition-colors duration-300">About</a>
-        <a href="#programs" className="hover-line hover:text-foreground transition-colors duration-300">Programs</a>
-        <a href="#impact" className="hover-line hover:text-foreground transition-colors duration-300">Impact</a>
-        <a href="#faq" className="hover-line hover:text-foreground transition-colors duration-300">FAQ</a>
       </div>
 
       <div className="flex items-center gap-4">
