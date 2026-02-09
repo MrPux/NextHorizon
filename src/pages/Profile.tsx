@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Check, GraduationCap, FileText, DollarSign, Building2, User } from "lucide-react";
+import { ArrowLeft, Check, GraduationCap, FileText, DollarSign, Building2, User, ShieldAlert } from "lucide-react";
 
 const steps = [
   {
@@ -15,6 +15,13 @@ const steps = [
     description: "All documentation and eligibility requirements have been confirmed.",
     date: "Feb 6, 2026",
     completed: true,
+  },
+  {
+    icon: ShieldAlert,
+    title: "Insurance Funds",
+    description: "Insurance funding is required and currently awaiting confirmation. Please ensure documentation is submitted.",
+    date: "Pending",
+    completed: false,
   },
   {
     icon: Building2,
