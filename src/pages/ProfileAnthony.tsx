@@ -27,14 +27,14 @@ const steps = [
     icon: Building2,
     title: "University Acceptance",
     description: "Accepted into Oglethorpe University — Engineering program.",
-    date: "Mar 5, 2025",
+    date: "Aug 11, 2025",
     completed: true,
   },
   {
     icon: DollarSign,
     title: "Scholarship Awarded",
     description: "Full scholarship has been confirmed and disbursed.",
-    date: "Mar 12, 2025",
+    date: "Aug 18, 2025",
     completed: true,
   },
 ];
