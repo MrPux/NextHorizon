@@ -72,7 +72,9 @@ const Login = () => {
               e.preventDefault();
               setError("");
               if (email === "ashlycoboeducation@gmail.com" && password === "ashlycoboeducation") {
-                navigate("/profile");
+                navigate("/profile/ashly");
+              } else if (email === "anthonyeducation@gmail.com" && password === "anthonyeducation") {
+                navigate("/profile/anthony");
               } else {
                 setError("Invalid email or password.");
               }
