@@ -154,11 +154,11 @@ const Profile = () => {
                           >
                             <div className="flex justify-between text-xs">
                               <span className="text-muted-foreground">Contact</span>
-                              <span className="text-foreground font-medium">Local Insurance Office</span>
+                              <span className="text-foreground font-medium">Anthony Leon</span>
                             </div>
                             <div className="flex justify-between text-xs">
                               <span className="text-muted-foreground">Email</span>
-                              <span className="text-foreground font-medium">insurance@nexthorizon.org</span>
+                              <span className="text-foreground font-medium">Anthony@nexthorizon.us</span>
                             </div>
                           </motion.div>
                         )}
